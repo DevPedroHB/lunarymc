@@ -11,12 +11,12 @@
 		"typescript": "^5.8.2"
 	},
 	"license": "MIT",
-	"main": "src/env.ts",
+	"main": "dist/env.js",
 	"name": "@lunarymc/env",
 	"packageManager": "pnpm@10.5.2",
 	"scripts": {
 		"build": "tsup-node"
 	},
-	"types": "src/env.ts",
+	"types": "dist/env.d.ts",
 	"version": "1.0.0"
 }

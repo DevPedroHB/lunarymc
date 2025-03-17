@@ -1,112 +1,109 @@
-import { signInAction } from "@/actions/user/sign-in-action";
-import type { Adapter } from "@auth/core/adapters";
+import type {
+	Adapter,
+	AdapterAccount,
+	AdapterAuthenticator,
+	AdapterSession,
+	AdapterUser,
+	VerificationToken as AdapterVerificationToken,
+} from "@auth/core/adapters";
 
 export const ApiAdapter: Adapter = {
-	async createUser(data) {
-		const { user } = await signInAction(data);
-
-		return {
-			id: user.id,
-			name: user.name,
-			email: user.email,
-			emailVerified: user.emailVerifiedAt || null,
-			image: user.image,
-		};
-	},
 	async createAuthenticator(authenticator) {
 		console.log("createAuthenticator", authenticator);
 
-		return authenticator;
+		return {} as AdapterAuthenticator;
 	},
 	async createSession(session) {
 		console.log("createSession", session);
 
-		return session;
+		return {} as AdapterSession;
+	},
+	async createUser(user) {
+		console.log("createUser", user);
+
+		return {} as AdapterUser;
 	},
 	async createVerificationToken(verificationToken) {
 		console.log("createVerificationToken", verificationToken);
 
-		return null;
+		return {} as AdapterVerificationToken;
 	},
 	async deleteSession(sessionToken) {
 		console.log("deleteSession", sessionToken);
+
+		return {} as AdapterSession;
 	},
 	async deleteUser(userId) {
 		console.log("deleteUser", userId);
+
+		return {} as AdapterUser;
 	},
 	async getAccount(providerAccountId, provider) {
 		console.log("getAccount", providerAccountId, provider);
 
-		return null;
+		return {} as AdapterAccount;
 	},
 	async getAuthenticator(credentialID) {
 		console.log("getAuthenticator", credentialID);
 
-		return null;
+		return {} as AdapterAuthenticator;
 	},
 	async getSessionAndUser(sessionToken) {
 		console.log("getSessionAndUser", sessionToken);
 
-		return null;
+		return {} as {
+			session: AdapterSession;
+			user: AdapterUser;
+		};
 	},
 	async getUser(id) {
 		console.log("getUser", id);
 
-		return null;
+		return {} as AdapterUser;
 	},
 	async getUserByAccount(providerAccountId) {
 		console.log("getUserByAccount", providerAccountId);
 
-		return null;
+		return {} as AdapterUser;
 	},
 	async getUserByEmail(email) {
 		console.log("getUserByEmail", email);
 
-		return null;
+		return {} as AdapterUser;
 	},
 	async linkAccount(account) {
 		console.log("linkAccount", account);
+
+		return {} as AdapterAccount;
 	},
 	async listAuthenticatorsByUserId(userId) {
 		console.log("listAuthenticatorsByUserId", userId);
 
-		return [];
+		return [] as AdapterAuthenticator[];
 	},
 	async unlinkAccount(providerAccountId) {
 		console.log("unlinkAccount", providerAccountId);
+
+		return {} as AdapterAccount;
 	},
 	async updateAuthenticatorCounter(credentialID, newCounter) {
 		console.log("updateAuthenticatorCounter", credentialID, newCounter);
 
-		return {
-			counter: 1,
-			credentialBackedUp: false,
-			credentialDeviceType: "credentialDeviceType",
-			credentialID: "credentialID",
-			credentialPublicKey: "credentialPublicKey",
-			providerAccountId: "providerAccountId",
-			userId: "userId",
-		};
+		return {} as AdapterAuthenticator;
 	},
 	async updateSession(session) {
 		console.log("updateSession", session);
 
-		return null;
+		return {} as AdapterSession;
 	},
 	async updateUser(user) {
 		console.log("updateUser", user);
 
-		return {
-			email: "email",
-			emailVerified: new Date(),
-			id: "id",
-			image: "image",
-			name: "name",
-		};
+		return {} as AdapterUser;
 	},
 	async useVerificationToken(params) {
 		console.log("useVerificationToken", params);
 
-		return null;
+		return {} as AdapterVerificationToken;
 	},
 };

@@ -2,7 +2,3 @@ packages:
   - apps/*
   - config/*
   - packages/*
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - esbuild
-  - sharp

@@ -11,12 +11,12 @@
 		"typescript": "^5.8.2"
 	},
 	"license": "MIT",
-	"main": "src/index.ts",
+	"main": "dist/index.js",
 	"name": "@lunarymc/types",
 	"packageManager": "pnpm@10.6.2",
 	"scripts": {
 		"build": "tsup-node"
 	},
-	"types": "src/index.ts",
+	"types": "dist/index.d.ts",
 	"version": "1.0.0"
 }

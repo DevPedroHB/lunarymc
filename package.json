@@ -10,7 +10,7 @@
 	"private": true,
 	"scripts": {
 		"build": "turbo build",
-		"dev": "turbo dev",
+		"start:dev": "turbo start:dev",
 		"lint": "biome lint",
 		"format": "biome format"
 	},

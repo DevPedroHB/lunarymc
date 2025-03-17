@@ -130,7 +130,11 @@ export function SignInDialog(props: ISignInDialog) {
 									variant="outline"
 									onClick={() => handleSignInProvider(authProvider.provider)}
 								>
-									<Icon className="size-5" />
+									{authProvider.provider === "github" ? (
+										<Icon className="invert dark:invert-0 size-5" />
+									) : (
+										<Icon className="size-5" />
+									)}
 								</Button>
 							);
 						})}
