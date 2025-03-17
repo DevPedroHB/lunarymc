@@ -1,0 +1,22 @@
+{
+	"author": "Pedro Henrique Bérgamo",
+	"dependencies": {
+		"zod": "^3.24.2"
+	},
+	"devDependencies": {
+		"@lunarymc/typescript-config": "workspace:*",
+		"@types/node": "^20",
+		"tsup": "^8.4.0",
+		"tsx": "^4.19.3",
+		"typescript": "^5.8.2"
+	},
+	"license": "MIT",
+	"main": "src/env.ts",
+	"name": "@lunarymc/env",
+	"packageManager": "pnpm@10.5.2",
+	"scripts": {
+		"build": "tsup-node"
+	},
+	"types": "src/env.ts",
+	"version": "1.0.0"
+}
