@@ -19,7 +19,10 @@
 			"a11y": {
 				"useAltText": "off"
 			},
-			"recommended": true
+			"recommended": true,
+			"style": {
+				"useImportType": "off"
+			}
 		}
 	},
 	"organizeImports": {
