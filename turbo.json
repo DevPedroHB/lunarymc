@@ -1,34 +1,35 @@
 {
-  "$schema": "https://turbo.build/schema.json",
-  "tasks": {
-    "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env*"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**",
-        "dist/**"
-      ]
-    },
-    "check-types": {
-      "dependsOn": [
-        "^check-types"
-      ]
-    },
-    "lint": {
-      "dependsOn": [
-        "^lint"
-      ]
-    },
-    "start:dev": {
-      "cache": false,
-      "persistent": true
-    }
-  },
-  "ui": "tui"
+	"$schema": "https://turbo.build/schema.json",
+	"globalEnv": [
+		"NODE_ENV",
+		"API_URL",
+		"AUTH_SECRET",
+		"AUTH_GITHUB_ID",
+		"AUTH_GITHUB_SECRET"
+	],
+	"tasks": {
+		"build": {
+			"dependsOn": ["^build"],
+			"env": [
+				"NODE_ENV",
+				"API_URL",
+				"AUTH_SECRET",
+				"AUTH_GITHUB_ID",
+				"AUTH_GITHUB_SECRET"
+			],
+			"inputs": ["$TURBO_DEFAULT$", ".env*"],
+			"outputs": [".next/**", "!.next/cache/**", "dist/**"]
+		},
+		"check-types": {
+			"dependsOn": ["^check-types"]
+		},
+		"lint": {
+			"dependsOn": ["^lint"]
+		},
+		"start:dev": {
+			"cache": false,
+			"persistent": true
+		}
+	},
+	"ui": "tui"
 }
