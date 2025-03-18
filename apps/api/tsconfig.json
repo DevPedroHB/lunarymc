@@ -1,3 +1,7 @@
 {
-	"extends": "@lunarymc/typescript-config/nestjs.json"
+	"extends": "@lunarymc/typescript-config/nestjs.json",
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "./dist"
+	}
 }
