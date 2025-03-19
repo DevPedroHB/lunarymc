@@ -19,9 +19,16 @@
 			"a11y": {
 				"useAltText": "off"
 			},
+			"complexity": {
+				"noStaticOnlyClass": "off"
+			},
 			"recommended": true,
 			"style": {
 				"useImportType": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noShadowRestrictedNames": "off"
 			}
 		}
 	},

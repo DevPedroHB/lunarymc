@@ -3,7 +3,7 @@
 import { SignUpDialog } from "@/components/sign-up-dialog";
 import { authProviders } from "@/constants/auth-providers";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { type SignInSchema, signInSchema } from "@lunarymc/types";
+import { CreateUserSchema, createUserSchema } from "@lunarymc/types";
 import type { BuiltInProviderType } from "next-auth/providers";
 import { type LiteralUnion, signIn } from "next-auth/react";
 import Link from "next/link";
@@ -26,11 +26,11 @@ import { Input } from "./ui/input";
 interface ISignInDialog extends ComponentProps<typeof DialogTrigger> {}
 
 export function SignInDialog(props: ISignInDialog) {
-	const form = useForm<SignInSchema>({
-		resolver: zodResolver(signInSchema),
+	const form = useForm<CreateUserSchema>({
+		resolver: zodResolver(createUserSchema),
 	});
 
-	async function handleSignInCredentials(data: SignInSchema) {
+	async function handleSignInCredentials(data: CreateUserSchema) {
 		console.log(data);
 
 		form.reset({

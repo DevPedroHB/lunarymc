@@ -3,7 +3,7 @@ export interface User {
 	name?: string | null;
 	email: string;
 	emailVerifiedAt?: Date | null;
-	image?: string | null;
+	avatarUrl?: string | null;
 	createdAt: Date;
 	updatedAt?: Date | null;
 }

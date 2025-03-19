@@ -5,7 +5,8 @@
 		"API_URL",
 		"AUTH_SECRET",
 		"AUTH_GITHUB_ID",
-		"AUTH_GITHUB_SECRET"
+		"AUTH_GITHUB_SECRET",
+		"DATABASE_URL"
 	],
 	"tasks": {
 		"build": {
@@ -15,13 +16,24 @@
 				"API_URL",
 				"AUTH_SECRET",
 				"AUTH_GITHUB_ID",
-				"AUTH_GITHUB_SECRET"
+				"AUTH_GITHUB_SECRET",
+				"DATABASE_URL"
 			],
 			"inputs": ["$TURBO_DEFAULT$", ".env*"],
 			"outputs": [".next/**", "!.next/cache/**", "dist/**"]
 		},
 		"check-types": {
 			"dependsOn": ["^check-types"]
+		},
+		"db:deploy": {
+			"cache": false
+		},
+		"db:generate": {
+			"cache": false
+		},
+		"db:migrate": {
+			"cache": false,
+			"persistent": true
 		},
 		"lint": {
 			"dependsOn": ["^lint"]
